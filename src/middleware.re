@@ -5,8 +5,9 @@ type asyncMiddleware =
 external asyncMiddlewareFrom : asyncMiddleware => Express.Middleware.t =
   "%identity";
 
+let app = Express.App.make();
+
 module Status = {
-  let app = Express.App.make();
   let make = () =>
     asyncMiddlewareFrom((_req, res, _next) =>
       Js.Promise.resolve(Express.Response.sendString(res, "works"))
@@ -14,7 +15,6 @@ module Status = {
 };
 
 module App = {
-  let app = Express.App.make();
   let make = () =>
     asyncMiddlewareFrom((req, res, _next) => {
       let universalRouter = UniversalRouter.router(Routes.handlers());
