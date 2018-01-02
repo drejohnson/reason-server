@@ -1,0 +1,27 @@
+{
+  "name": "reason-server",
+  "version": "0.1.0",
+  "scripts": {
+    "build": "bsb -make-world",
+    "start": "bsb -make-world -w",
+    "clean": "bsb -clean-world"
+  },
+  "keywords": [
+    "BuckleScript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "bs-chalk": "^0.1.1",
+    "bs-express": "0.0.6",
+    "bs-platform": "^2.1.0",
+    "bs-promise-router": "^0.1.2"
+  },
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "history": "^4.7.2",
+    "morgan": "^1.9.0",
+    "universal-router": "^5.0.0"
+  }
+}
